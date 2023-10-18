@@ -49,24 +49,24 @@ https://templatemo.com/tm-591-villa-agency
           <div class="col-12">
             <nav class="main-nav">
               <!-- ***** Logo Start ***** -->
-              <a href="index.html" class="logo"><h1>Villa</h1></a>
+              <a href="{% url 'home' %}" class="logo"><h1>Villa</h1></a>
               <!-- ***** Logo End ***** -->
               <!-- ***** Menu Start ***** -->
               <ul class="nav">
                 <li>
-                  <a href="index.html" class="active">Home</a>
+                  <a href=" {% url 'home' %}" class="{% if 'home' in request.path %}active{% endif %}">Home</a>
                 </li>
                 <li>
-                  <a href="properties.html">Properties</a>
+                  <a href=" {% url 'properties' %}" class="{% if '/properties' in request.path %}active{% endif %}">Properties</a>
                 </li>
                 <li>
-                  <a href="property-details.html">Property Details</a>
+                  <a href=" {% url 'property_details' %}" class="{% if 'property_details' in request.path %}active{% endif %}">Property Details</a>
                 </li>
                 <li>
-                  <a href="contact.html">Contact Us</a>
+                  <a href=" {% url 'contact' %}" class="{% if 'contact' in request.path %}active{% endif %}">Contact Us</a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a>
+                  <a href="{% url 'home' %}"><i class="fa fa-calendar"></i> Schedule a visit</a>
                 </li>
               </ul>
               <a class="menu-trigger"><span>Menu</span></a>
