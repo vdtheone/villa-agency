@@ -24,5 +24,17 @@ class Property(models.Model):
     area = models.IntegerField()
     floor = models.IntegerField()
     parking = models.IntegerField()
-    image = models.ImageField(upload_to = "images/")
+    image = models.FileField(upload_to = "images/")
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=50)
+    subject = models.CharField(max_length=25)
+    message = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.name
+
+    
