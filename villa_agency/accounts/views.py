@@ -11,7 +11,7 @@ def home(request):
         message = request.POST['message']
         detail = ContactUs(name=name, email=email, subject=subject, message=message)
         detail.save()
-        redirect('/home')
+        redirect("home")
     return render(request, 'home.html', {'properties':properties})
 
 
@@ -23,7 +23,7 @@ def contact(request):
         message = request.POST['message']
         detail = ContactUs(name=name, email=email, subject=subject, message=message)
         detail.save()
-        redirect('/home')
+        redirect("home")
     return render(request, 'contact.html')
 
 
