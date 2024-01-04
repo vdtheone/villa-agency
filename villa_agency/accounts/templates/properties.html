@@ -30,27 +30,28 @@
         </li>
       </ul>
       <div class="row properties-box">
+        {% for property in properties %}
         <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
           <div class="item">
-            <a href="{% url 'property_details' %}"><img src="assets/images/property-01.jpg" alt="" /></a>
-            <span class="category">Luxury Villa</span>
-            <h6>$2.264.000</h6>
+            <a href="{% url 'property_details' %}"><img src="{{ property.image.url }}" alt="" /></a>
+            <span class="category">{{ property.category }}</span>
+            <h6>${{ property.price }}</h6>
             <h4><a href="{% url 'property_details' %}">18 Old Street Miami, OR 97219</a></h4>
             <ul>
               <li>
-                Bedrooms: <span>8</span>
+                Bedrooms: <span> {{ property.bedrooms }} </span>
               </li>
               <li>
-                Bathrooms: <span>8</span>
+                Bathrooms: <span> {{ property.bathrooms }} </span>
               </li>
               <li>
-                Area: <span>545m2</span>
+                Area: <span>{{ propery.area }}m2</span>
               </li>
               <li>
-                Floor: <span>3</span>
+                Floor: <span> {{ property.floor }} </span>
               </li>
               <li>
-                Parking: <span>6 spots</span>
+                Parking: <span> {{ property.parking }}spots</span>
               </li>
             </ul>
             <div class="main-button">
@@ -58,7 +59,12 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 str">
+
+        {% endfor %}
+
+
+
+        {% comment %} <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 str">
           <div class="item">
             <a href="{% url 'property_details' %}"><img src="assets/images/property-02.jpg" alt="" /></a>
             <span class="category">Luxury Villa</span>
@@ -281,7 +287,7 @@
               <a href="{% url 'property_details' %}">Schedule a visit</a>
             </div>
           </div>
-        </div>
+        </div> {% endcomment %}
       </div>
       <div class="row">
         <div class="col-lg-12">
