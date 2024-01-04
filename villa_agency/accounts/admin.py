@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Property
+from .models import Category, ContactUs, Property
 
 # Register your models here.
 
@@ -13,3 +13,4 @@ class PropertyAdmin(admin.ModelAdmin):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Property, PropertyAdmin)
+admin.site.register(ContactUs)
