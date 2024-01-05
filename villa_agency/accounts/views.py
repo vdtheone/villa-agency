@@ -34,3 +34,7 @@ def properties(request):
 
 def property_details(request):
     return render(request, 'property_details.html')
+
+
+def my_custom_page_not_found_view(request, exception):
+    return render(request, '404.html', status=404)
